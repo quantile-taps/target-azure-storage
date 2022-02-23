@@ -1,0 +1,6 @@
+singer-sdk
+azure-storage-file-datalake
+pandas
+pyarrow
+fsspec
+adlfs

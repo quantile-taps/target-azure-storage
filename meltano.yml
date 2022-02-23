@@ -1,0 +1,19 @@
+version: 1
+send_anonymous_usage_stats: true
+project_id: 6d09575a-cca1-4f47-84a7-6768de538a81
+plugins:
+  extractors:
+    - name: tap-gitlab
+      variant: meltanolabs
+      pip_url: git+https://github.com/MeltanoLabs/tap-gitlab.git
+      config:
+        projects: meltano/meltano
+        start_date: "2022-02-10T00:00:00Z"
+  loaders:
+    - name: target-azure-storage
+      namespace: target_azure_storage
+      pip_url: -e .
+    - name: target-azure-storage-prod
+      namespace: target_azure_storage_prod
+      pip_url: target-azure-storage
+      executable: target-azure-storage

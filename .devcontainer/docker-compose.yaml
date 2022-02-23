@@ -1,0 +1,18 @@
+x-common-variables: &common-variables
+  QUANTILE: development
+
+services:
+  vscode:
+    build:
+      context: dockerfiles
+      dockerfile: vscode.Dockerfile
+    tty: true
+    volumes:
+      - ..:/target-azure-parquet:cached
+      - pip-cache:/root/.cache/pip:cached
+    environment:
+      <<: *common-variables
+      MELTANO_PROJECT_ROOT: /target-azure-parquet
+
+volumes:
+  pip-cache:
