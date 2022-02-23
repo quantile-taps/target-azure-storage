@@ -1,5 +1,5 @@
 {
-    "name": "target-azure-parquet",
+    "name": "target-azure-storage",
     "dockerComposeFile": "docker-compose.yaml",
     "service": "vscode",
     "shutdownAction": "stopCompose",
@@ -13,7 +13,7 @@
         "ms-azuretools.vscode-azurestorage",
         "redhat.vscode-yaml"
     ],
-    "workspaceFolder": "/target-azure-parquet",
+    "workspaceFolder": "/target-azure-storage",
     "postCreateCommand": "pip install -r /requirements.txt",
     "settings": {
         "python.linting.ignorePatterns": [

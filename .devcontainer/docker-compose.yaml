@@ -8,11 +8,11 @@ services:
       dockerfile: vscode.Dockerfile
     tty: true
     volumes:
-      - ..:/target-azure-parquet:cached
+      - ..:/target-azure-storage:cached
       - pip-cache:/root/.cache/pip:cached
     environment:
       <<: *common-variables
-      MELTANO_PROJECT_ROOT: /target-azure-parquet
+      MELTANO_PROJECT_ROOT: /target-azure-storage
 
 volumes:
   pip-cache:
